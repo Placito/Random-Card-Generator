@@ -24,7 +24,6 @@ let generateRandomNumber = () => {
     "Q",
     "K"
   ];
-
   let indexNumbers = Math.floor(Math.random() * numbers.length);
   return numbers[indexNumbers];
 };
@@ -33,24 +32,28 @@ let generateRandomNumber = () => {
 let generateRandomSimbol = () => {
   let simbols = ["♦", "♥", "♠", "♣"];
   let indexSimbols = Math.floor(Math.random() * simbols.length);
-
   return simbols[indexSimbols];
 };
 
-// create a card element with values that the user put in the inputs and than delete the previous one
+// create a card element and than delete the previous one
 let generateCard = () => {
   // create
   let card = document.createElement("div");
   card.classList.add("card");
+
   let newSimbol = generateRandomSimbol();
+  let color = "black";
+  if (newSimbol == "♥" || newSimbol == "♦") {
+    color = "red";
+  }
   card.innerHTML =
-    '<span class="top-suit">' +
+    `<span class="${color} top-suit">` +
     newSimbol +
     "</span>" +
     '<span class="number">' +
     generateRandomNumber() +
     "</span>" +
-    '<span class="bottom-suit">' +
+    `<span class="${color} bottom-suit">` +
     newSimbol +
     "</span>";
   document.body.appendChild(card);

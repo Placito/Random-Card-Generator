@@ -21,18 +21,17 @@ body {
   top: 10px;
   left: 20px;
 }
-.card.spade .card.club {
-  color: black;
-}
-.card.diamond,
-.card.heart {
-  color: red;
-}
 .bottom-suit {
   position: absolute;
   bottom: 10px;
   right: 20px;
   transform: rotate(180deg);
+}
+.red {
+  color: red;
+}
+.black {
+  color: black;
 }
 .btn {
   position: relative;

@@ -46,6 +46,17 @@ let generateCard = () => {
   if (newSimbol == "♥" || newSimbol == "♦") {
     color = "red";
   }
+
+  //using the input's values to create a new card
+  let inputHeight = document.querySelector("#height").value;
+  let inputWidth = document.querySelector("#width").value;
+
+  let newHeight = parseInt(inputHeight);
+  let newWidth = parseInt(inputWidth);
+
+  card.style.height = `${newHeight}px`;
+  card.style.width = `${newWidth}px`;
+
   card.innerHTML =
     `<span class="${color} top-suit">` +
     newSimbol +
